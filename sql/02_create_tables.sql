@@ -18,3 +18,10 @@ CREATE TABLE orders (
     customer_id INTEGER REFERENCES customers(customer_id),
     order_date DATE
 );
+
+CREATE TABLE order_items (
+    order_id INTEGER REFERENCES orders(order_id),
+    product_id INTEGER REFERENCES products(product_id),
+    quantity INTEGER,
+    PRIMARY KEY (order_id, product_id)
+);
