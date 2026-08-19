@@ -56,3 +56,19 @@ LEFT JOIN products AS p
     ON oi.product_id = p.product_id
 GROUP BY c.customer_id, c.name
 ORDER BY total_spent DESC;
+
+-- Which products have generated more than $100 in total revenue?
+SELECT
+    p.product_id,
+    p.product_name,
+    SUM(oi.quantity * p.price) AS total_revenue
+FROM customers AS c
+LEFT JOIN orders AS o
+    ON c.customer_id = o.customer_id
+LEFT JOIN order_items AS oi
+    ON o.order_id = oi.order_id
+LEFT JOIN products AS p
+    ON oi.product_id = p.product_id
+GROUP BY p.product_id, p.product_name
+HAVING SUM(oi.quantity * p.price) > 100
+ORDER BY total_revenue DESC;
