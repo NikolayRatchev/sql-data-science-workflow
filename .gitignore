@@ -1,0 +1,15 @@
+# PostgreSQL data
+data/
+*.db
+
+# Python
+__pycache__/
+.venv/
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# IDE
+.vscode/
