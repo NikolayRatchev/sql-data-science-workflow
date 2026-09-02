@@ -14,6 +14,7 @@ engine = create_engine(
 # %%
 metadata = MetaData()
 
+# access `products` table 
 products = Table(
     "products",
     metadata,
@@ -33,9 +34,12 @@ query = (
     .group_by(products.c.category)
 )
 
+# show query in SQL
 print(query)
 
 # %%
+
+# execute query
 with engine.connect() as connection:
     result = connection.execute(query)
 
