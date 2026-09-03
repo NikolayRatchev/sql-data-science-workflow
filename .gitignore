@@ -1,5 +1,4 @@
 # PostgreSQL data
-data/
 *.db
 
 # Python
@@ -13,3 +12,7 @@ __pycache__/
 
 # IDE
 .vscode/
+
+# Raw datasets
+data/raw/*
+!data/raw/.gitkeep
