@@ -14,7 +14,7 @@ An eligible customer is one who made at least one valid purchase before the snap
 
 ## Dataset
 
-The project uses the [UCI Online Retail dataset](https://archive.ics.uci.edu/dataset/352/online+retail), containing 541,909 invoice-line records from a UK-based online retailer between December 2010 and December 2011. The variables describe invoices, products, quantities, prices, transaction dates, customers, and countries.
+The project uses the [UCI Online Retail dataset](https://archive.ics.uci.edu/dataset/352/online+retail), containing 541,909 invoice-line records from a UK-based online retailer between December 2010 and December 2011. The variables describe invoices, products, quantities, prices, transaction dates, customers, and countries. The raw dataset is not distributed with this repository and remains subject to its original source terms. 
 
 The raw transactions are imported into PostgreSQL and transformed into an analytical view containing deduplicated, customer-linked records classified as purchases, returns or cancellations, and other transactions. SQL then aggregates the historical transactions into a snapshot of 3,317 eligible customers.
 
