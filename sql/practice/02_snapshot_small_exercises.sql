@@ -158,7 +158,7 @@ WHERE ora.customer_id = 12346
 GROUP BY ora.customer_id;
 
 
--- Additional investigation: classify every invoice
+-- Additional investigation: classify every invoice.
 -- Determine whether each invoice contains purchase rows, return rows,
 -- both types, or neither type.
 
@@ -300,6 +300,9 @@ INNER JOIN target_customers AS tc
 
 -- Note: [2011-10-01, 2011-11-01) represents the next calendar month
 -- (31 days), although the existing project target is named purchased_next_30_days.
+
+-- Finding: 1,364 customers purchased during October, but only 1,006
+-- belonged to the pre-snapshot eligible cohort.
 
 
 -- Exercise 7: Preserve the snapshot cohort with a LEFT JOIN
